@@ -1,7 +1,7 @@
-# ReactJs
-# React-redux
-# Redux-saga
-# Create-List-Delete
+ReactJS
+React-redux
+Redux-saga
+Create-List-Delete
 ## Available Scripts
 
 In the project directory, you can run:
