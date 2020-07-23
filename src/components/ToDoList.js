@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import ToDo from './ToDo';
 import Table from 'react-bootstrap/Table'
 
+
+
 const ToDoList = ({ toDoList }) => (
 <Table responsive>    
     <thead>
@@ -25,7 +27,7 @@ ToDoList.propTypes = {
     PropTypes.shape({
       _id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
-      date: PropTypes.string.isRequired
+      remarks: PropTypes.string
     }).isRequired
   ).isRequired
 };

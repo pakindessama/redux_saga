@@ -13,7 +13,7 @@ export default () => (
       List of tasks
     </Link>
     <Link className="btn btn-secondary" to="/new-item">
-      + Add New
+      + Add a task
     </Link>
   </NavigationBar>
 );

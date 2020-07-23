@@ -22,7 +22,7 @@ let AddToDo = ({ dispatch }) => {
         title.value = '';
         remarks.value = '';
       }}
-    >
+    > 
       <Form.Group controlId="formBasicEmail">
         <InputGroup>
           <Form.Control
@@ -40,7 +40,7 @@ let AddToDo = ({ dispatch }) => {
             }}
           /> 
           <InputGroup.Append>
-            <Button type="submit">Add To-Do</Button>
+            <Button type="submit">Add</Button>
           </InputGroup.Append>
         </InputGroup>
       </Form.Group>

@@ -14,7 +14,6 @@ export function* fetchToDoList() {
           remarks: "Just for fun"
       }
     ];
-  //console.log(data);
   yield put({ type: RENDER_TODO_LIST, toDoList: data });
 }
 

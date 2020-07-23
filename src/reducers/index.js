@@ -30,16 +30,14 @@ export default function toDoApp(state = initialState, action) {
       };
     //Delete a task
     case DELETE_TODO:
-      let deleteToDoList = [
-        ...state.toDoList,
-        {
-          ...action.toDoItem
-        }
-      ];
       return {
         ...state,
-        toDoList: deleteToDoList
-      };
+        toDoList:[ 
+                    ...state.toDoList.filter(toDoItem => toDoItem._id !== action.toDoItem)
+                 ]
+      }
+   
+
     default:
       return state;
   }
