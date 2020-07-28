@@ -33,7 +33,6 @@ export function loadToDoList() {
 
 //Deleting a task
 export const deleteTask = (toDoItem)=> {
-  console.log(toDoItem)
   const requestOptions = {
     method: 'POST',
     headers: { 'Authentication':  'token-del=def','Content-Type': 'application/json' },
@@ -51,7 +50,6 @@ export const deleteTask = (toDoItem)=> {
 
 export const updateTask = (item)=> {
   
-  console.log("Item:",item);
   const requestOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

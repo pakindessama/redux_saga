@@ -16,7 +16,6 @@ const ToDo = (props) => {
                                     <td> 
                                     <Button variant="primary" 
                                         onClick = {()=>{
-                                                          console.log(props);
                                                           history.push('/update-item', {id: props.id, task: props.task, remarks:props.remarks})
                                                       }}>
                                         Update

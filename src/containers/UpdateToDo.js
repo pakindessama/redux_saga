@@ -12,11 +12,9 @@ import { useHistory } from "react-router-dom";
 let UpdateToDo = (props) => {
 
   const history = useHistory();     
-  console.log("Props:",props);
   let taskCell;
   let remarksCell;
 
-  console.log(props.location.state);
   let item = {
     task : props.location.state.task,
     remarks : props.location.state.remarks,
@@ -35,8 +33,7 @@ let UpdateToDo = (props) => {
     <Form
       onSubmit={e => {
         e.preventDefault();
-        console.log(item)
-        console.log(props);
+       
         props.updateTask(item);
         return history.push('/');
       }}

@@ -38,15 +38,12 @@ export default function toDoApp(state = initialState, action) {
       } 
     
       case UPDATE_TODO:
-        console.log("In Update");
-        console.log(action.item);
-        console.log(state)
+      
         const temp = Object.assign({}, state, {
           data: state.toDoList.map(item => {
            return item.id === action.item.id ? action.item: item;
           }) // replace matched item and returns the array 
        }); 
-       console.log("TEMP:",temp.data)
        return {
         ...state,
         toDoList: temp.data

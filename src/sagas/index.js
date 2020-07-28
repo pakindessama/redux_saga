@@ -5,7 +5,6 @@ export function* fetchToDoList() {
   const response = yield fetch('https://dzt2xcr062.execute-api.us-west-1.amazonaws.com/getAllData');
   const responseData = yield response.json();
   const data = responseData.Items;
-  console.log(data);
   yield put({ type: RENDER_TODO_LIST, toDoList: data });
 }
 
