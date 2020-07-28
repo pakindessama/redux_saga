@@ -8,18 +8,18 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
 let AddToDo = ({ dispatch }) => {
-  let title;
+  let task;
   let remarks;
 
   return (
     <Form
       onSubmit={e => {
         e.preventDefault();
-        if (!title.value.trim()) {
+        if (!task.value.trim()) {
           return;
         }
-        dispatch(addToDo(title.value, remarks.value));
-        title.value = '';
+        dispatch(addToDo(task.value, remarks.value));
+        task.value = '';
         remarks.value = '';
       }}
     > 
@@ -29,7 +29,7 @@ let AddToDo = ({ dispatch }) => {
             type="text"
             placeholder="Enter a task"
             ref={node => {
-              title = node;
+              task = node;
             }}
           /> 
           <Form.Control

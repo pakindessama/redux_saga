@@ -33,11 +33,10 @@ export default function toDoApp(state = initialState, action) {
       return {
         ...state,
         toDoList:[ 
-                    ...state.toDoList.filter(toDoItem => toDoItem._id !== action.toDoItem)
+                    ...state.toDoList.filter(toDoItem => toDoItem.id !== action.toDoItem)
                  ]
       }
-   
-
+  
     default:
       return state;
   }

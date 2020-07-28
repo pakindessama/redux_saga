@@ -6,11 +6,11 @@ import { connect } from 'react-redux';
 
 const ToDo = (props) => {                           
                           return( <tr>
-                                    <td>{props.title}</td>
+                                    <td>{props.task}</td>
                                     <td>{props.remarks}</td>
                                     <td>
                                       <Button variant="danger" 
-                                        onClick = {()=>props.deleteTask(props._id)}>
+                                        onClick = {()=>props.deleteTask(props.id)}>
                                         Delete
                                       </Button>
                                     </td>
@@ -20,7 +20,7 @@ const ToDo = (props) => {
 
 
 ToDo.propTypes = {
-  title: PropTypes.string.isRequired,
+  task: PropTypes.string.isRequired,
   remarks: PropTypes.string.isRequired,
 };
 

@@ -25,8 +25,8 @@ const ToDoList = ({ toDoList }) => (
 ToDoList.propTypes = {
   toDoList: PropTypes.arrayOf(
     PropTypes.shape({
-      _id: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+      task: PropTypes.string.isRequired,
       remarks: PropTypes.string
     }).isRequired
   ).isRequired
