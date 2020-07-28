@@ -2,12 +2,13 @@ export const ADD_TODO = 'ADD_TODO';
 export const LOAD_TODO_LIST = 'LOAD_TODO_LIST';
 export const RENDER_TODO_LIST = 'RENDER_TODO_LIST';
 export const DELETE_TODO = 'DELETE_TODO';
+export const UPDATE_TODO = 'UPDATE_TODO';
 
 
 export function addToDo(task, remarks) {
   const requestOptions = {
     method: 'POST',
-    headers: { 'Authentication': 'token-abc=abc','Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ task: task, remarks:remarks })
   };     
   fetch('https://glz83g3jo3.execute-api.us-west-1.amazonaws.com/putdb', requestOptions)
@@ -53,15 +54,18 @@ export const updateTask = (item)=> {
   console.log("Item:",item);
   const requestOptions = {
     method: 'POST',
-    headers: { 'Authentication':  'token-up=ghi','Content-Type': 'application/json' },
-    body: item
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(item)
   };
-       
   fetch('https://bu1ldqqtoe.execute-api.us-west-1.amazonaws.com/updb', requestOptions);
-  console.log("Then");
+
   return {
-    type: DELETE_TODO,
-    toDoItem: item.id,
+    type: UPDATE_TODO,
+    item: {
+      id: item.id, // The ID will be represented by the time
+      task: item.task,
+      remarks: item.remarks
+    }
   };
 }
 

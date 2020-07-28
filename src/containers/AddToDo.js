@@ -6,11 +6,12 @@ import { addToDo } from '../actions';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
+import { useHistory } from "react-router-dom";
 
 let AddToDo = ({ dispatch }) => {
   let task;
   let remarks;
-
+  const history = useHistory();     
   return (
     <Form
       onSubmit={e => {
@@ -21,6 +22,7 @@ let AddToDo = ({ dispatch }) => {
         dispatch(addToDo(task.value, remarks.value));
         task.value = '';
         remarks.value = '';
+        return history.push('/');
       }}
     > 
       <Form.Group controlId="formBasicEmail">

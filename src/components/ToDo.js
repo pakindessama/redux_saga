@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
-import {deleteTask} from '../actions'
+import {deleteTask} from '../actions';
+import {updateTask} from '../actions';
 import { connect } from 'react-redux';
 import { useHistory } from "react-router-dom";
 
@@ -34,10 +35,11 @@ ToDo.propTypes = {
   task: PropTypes.string.isRequired,
   remarks: PropTypes.string.isRequired,
 };
-
+ 
 const mapDispatchToProps = dispatch =>{
   return {
-    deleteTask : ToDoItem => dispatch(deleteTask(ToDoItem))
+    deleteTask : ToDoItem => dispatch(deleteTask(ToDoItem)),
+    updateTask : ToDoItem => dispatch(updateTask(ToDoItem))
   };
 }
 

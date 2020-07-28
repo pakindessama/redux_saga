@@ -6,10 +6,13 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import {updateTask} from '../actions'
+import { useHistory } from "react-router-dom";
 
 
 let UpdateToDo = (props) => {
 
+  const history = useHistory();     
+  console.log("Props:",props);
   let taskCell;
   let remarksCell;
 
@@ -33,7 +36,9 @@ let UpdateToDo = (props) => {
       onSubmit={e => {
         e.preventDefault();
         console.log(item)
-        updateTask(item);
+        console.log(props);
+        props.updateTask(item);
+        return history.push('/');
       }}
     > 
       <Form.Group controlId="formBasicEmail">
@@ -64,5 +69,13 @@ let UpdateToDo = (props) => {
   );
 };
 
+const mapDispatchToProps = dispatch =>{
+  return {
+    updateTask : item => dispatch(updateTask(item))
+  };
+}
 
-export default connect () (UpdateToDo);
+export default connect (
+  null,
+  mapDispatchToProps,
+  ) (UpdateToDo);
