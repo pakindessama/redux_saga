@@ -30,12 +30,13 @@ export default function toDoApp(state = initialState, action) {
       };
     //Delete a task
     case DELETE_TODO:
+      console.log("In delete");
       return {
         ...state,
         toDoList:[ 
                     ...state.toDoList.filter(toDoItem => toDoItem.id !== action.toDoItem)
                  ]
-      }
+      } 
   
     default:
       return state;

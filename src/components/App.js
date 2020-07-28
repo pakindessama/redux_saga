@@ -5,6 +5,8 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 import AddToDo from '../containers/AddToDo';
+import UpdateToDo from '../containers/UpdateToDo';
+
 import ToDoListContainer from '../containers/ToDoListContainer';
 
 import { Route } from 'react-router-dom';
@@ -21,6 +23,7 @@ class App extends Component {
             <Navigation />
             <Route exact path="/" component={ToDoListContainer} />
             <Route exact path="/new-item" component={AddToDo} />
+            <Route exact path="/update-item" component={UpdateToDo} />
           </Col>
         </Row>
         </div>

@@ -32,6 +32,7 @@ export function loadToDoList() {
 
 //Deleting a task
 export const deleteTask = (toDoItem)=> {
+  console.log(toDoItem)
   const requestOptions = {
     method: 'POST',
     headers: { 'Authentication':  'token-del=def','Content-Type': 'application/json' },
@@ -44,6 +45,23 @@ export const deleteTask = (toDoItem)=> {
   return {
     type: DELETE_TODO,
     toDoItem: toDoItem,
+  };
+}
+
+export const updateTask = (item)=> {
+  
+  console.log("Item:",item);
+  const requestOptions = {
+    method: 'POST',
+    headers: { 'Authentication':  'token-up=ghi','Content-Type': 'application/json' },
+    body: item
+  };
+       
+  fetch('https://bu1ldqqtoe.execute-api.us-west-1.amazonaws.com/updb', requestOptions);
+  console.log("Then");
+  return {
+    type: DELETE_TODO,
+    toDoItem: item.id,
   };
 }
 

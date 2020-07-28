@@ -30,7 +30,7 @@ let AddToDo = ({ dispatch }) => {
             placeholder="Enter a task"
             ref={node => {
               task = node;
-            }}
+            }} 
           /> 
           <Form.Control
             type="text"
