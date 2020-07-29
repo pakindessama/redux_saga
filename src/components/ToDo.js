@@ -7,16 +7,18 @@ import { connect } from 'react-redux';
 import { useHistory } from "react-router-dom";
 
 const ToDo = (props) => {           
-                          const history = useHistory();     
+                          const history = useHistory(); //Use for navigation   
                           return( 
                                 
                                   <tr>
                                     <td>{props.task}</td>
                                     <td>{props.remarks}</td>
                                     <td> 
-                                    <Button variant="primary" 
+                                      <Button variant="primary" 
                                         onClick = {()=>{
-                                                          history.push('/update-item', {id: props.id, task: props.task, remarks:props.remarks})
+                                                          history.push('/update-item', 
+                                                                        {id: props.id, task: props.task, remarks:props.remarks}
+                                                                      )
                                                       }}>
                                         Update
                                       </Button>

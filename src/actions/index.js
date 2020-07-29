@@ -18,7 +18,6 @@ export function addToDo(task, remarks) {
   return {
     type: ADD_TODO,
     toDoItem: {
-      id: (new Date().getTime()).toString(), // The ID will be represented by the time
       task,
       remarks
     }
@@ -35,7 +34,7 @@ export function loadToDoList() {
 export const deleteTask = (toDoItem)=> {
   const requestOptions = {
     method: 'POST',
-    headers: { 'Authentication':  'token-del=def','Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ id: toDoItem })
   };     
   fetch('https://67gdlqwyy3.execute-api.us-west-1.amazonaws.com/prod', requestOptions)
@@ -48,6 +47,7 @@ export const deleteTask = (toDoItem)=> {
   };
 }
 
+//Updating a task
 export const updateTask = (item)=> {
   
   const requestOptions = {
@@ -55,15 +55,13 @@ export const updateTask = (item)=> {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(item)
   };
-  fetch('https://bu1ldqqtoe.execute-api.us-west-1.amazonaws.com/updb', requestOptions);
+  fetch('https://bu1ldqqtoe.execute-api.us-west-1.amazonaws.com/updb', requestOptions)
+        .then(response => response.json())
+        .then();
 
   return {
     type: UPDATE_TODO,
-    item: {
-      id: item.id, // The ID will be represented by the time
-      task: item.task,
-      remarks: item.remarks
-    }
+    item
   };
 }
 

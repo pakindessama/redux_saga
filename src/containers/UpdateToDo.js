@@ -11,15 +11,13 @@ import { useHistory } from "react-router-dom";
 
 let UpdateToDo = (props) => {
 
-  const history = useHistory();     
+  const history = useHistory(); //use for navigation
+  //eslint-disable-next-line     
   let taskCell;
+  //eslint-disable-next-line     
   let remarksCell;
 
-  let item = {
-    task : props.location.state.task,
-    remarks : props.location.state.remarks,
-    id : props.location.state.id
-  };
+  let item = props.location.state;
 
   const handleTaskChange = (e)=>{
     item.task = e.target.value
